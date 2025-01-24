@@ -1,0 +1,34 @@
+{
+    "name": "ebs-driver-tm1637",
+    "version": "0.1.0",
+    "description": "TM1637 7 segment LCD driver for EBS Projects",
+    "keywords": "ebs",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ebs-universe/piolib-driver-tm1637"
+    },
+    "authors": {
+        "name": "Chintalagiri Shashank",
+        "email": "shashank.chintalagiri@gmail.com",
+        "url": "https://github.com/chintal",
+        "maintainer": true
+    },
+    "license": "LGPL-3.0-or-later",
+    "homepage": "https://ebs-universe.github.io/piolib-driver-tm1637",
+    "frameworks": "*",
+    "platforms": "*",
+    "dependencies": [
+        {
+            "owner": "chintal",
+            "name": "ebs-seg7"
+        },
+        {
+            "owner": "chintal",
+            "name": "ebs-hal-uc"
+        },
+        {
+            "owner": "chintal",
+            "name": "ebs-ds"
+        }
+    ]
+  }
