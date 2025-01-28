@@ -1,6 +1,6 @@
 {
     "name": "ebs-driver-tm1637",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "TM1637 7 segment LCD driver for EBS Projects",
     "keywords": "ebs",
     "repository": {
