@@ -89,6 +89,17 @@ extern tm1637_t tm1637;
 
 void tm1637_init(void);
 void tm1637_set_display_number(int16_t number, seg7_pos_spec_t pos_spec);
+int tm1637_vprintf(const char *format, va_list args);
+
+static inline int tm1637_printf(const char *format, ...){
+    int rval;
+    va_list args;
+    va_start( args, format );
+    rval = tm1637_vprintf(format, args);
+    va_end(args);       
+    return rval;
+}
+
 void tm1637_set_display_content(uint8_t content[]);
 void tm1637_set_display_state(bool state);
 bool tm1637_get_display_state(void);
@@ -103,6 +114,15 @@ void tm1637_state_machine(void);
 
 void tm1637_init(tm1637_t * tm1637);
 void tm1637_set_display_number(tm1637_t * tm1637, int16_t number, seg7_pos_spec_t pos_spec);
+void tm1637_vprintf(tm1637_t * tm1637, const char *format, va_list args);
+
+static inline void tm1637_printf(tm1637_t * tm1637, const char *format, ...){
+    va_list args;
+    va_start( args, format );
+    tm1637_vprintf(tm1637_t * tm1637, format, args);
+    va_end(args);       
+}
+
 void tm1637_set_display_content(tm1637_t * tm1637, uint8_t content[]);
 
 void tm1637_set_display_state(tm1637_t * tm1637, bool state);

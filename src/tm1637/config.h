@@ -18,6 +18,10 @@
     #define TM1637_ENABLE_DISPLAY       1
 #endif
 
+#ifndef TM1637_ENABLE_PRINTF
+    #define TM1637_ENABLE_PRINTF        1
+#endif
+
 #ifndef TM1637_NUM_DIGITS
     #define TM1637_NUM_DIGITS           4
 #endif

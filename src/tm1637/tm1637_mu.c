@@ -33,9 +33,16 @@ void tm1637_set_display_content(tm1637_t * tm1637, uint8_t content[]) {
 
 void tm1637_set_display_number(tm1637_t * tm1637, int16_t number, seg7_pos_spec_t pos_spec) {
     uint8_t buffer[TM1637_NUM_DIGITS] = {SEG7_CLEAR};
-    if (seg7_prep_display_buffer(number, pos_spec, buffer, tm1637->hwif.len)){
+    if (seg7_prepbuf_number(buffer, tm1637->hwif.len, number, pos_spec)){
         tm1637_set_display_content(tm1637, buffer);        
     };
+}
+
+int tm1637_vprintf(tm1637_t * tm1637, const char *format, va_list args) {
+    uint8_t buffer[TM1637_NUM_DIGITS] = {SEG7_CLEAR};
+    int rval = seg7_vprintf((char *)buffer, TM1637_NUM_DIGITS, format, args);
+    tm1637_set_display_content(tm1637_t * tm1637, buffer);
+    return rval;
 }
 
 static inline void tm1637_write_display_settings(tm1637_t * tm1637) {

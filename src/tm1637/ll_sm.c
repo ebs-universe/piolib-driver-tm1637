@@ -1,6 +1,6 @@
 
-#include "ll_sm.h"
 
+#ifdef _LL_COMPILATION_UNIT 
 #if TM1637_IMPL_SM
 
 // Executor will be called when the previous delay, if any, 
@@ -194,4 +194,5 @@ void tm1637_state_machine(tm1637_t * tm1637)
     return;
 }
 
+#endif
 #endif

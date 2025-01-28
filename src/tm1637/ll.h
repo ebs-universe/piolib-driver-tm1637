@@ -6,8 +6,10 @@
 #include "tm1637.h"
 
 #if TM1637_IMPL_SM
+    #include "ll_common.h"
     #include "ll_sm.h"
-#else 
+#else
+    #include "ll_common.h"
     #include "ll_blocking.h"
 #endif
 #endif
